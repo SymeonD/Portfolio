@@ -13,7 +13,7 @@ const options = {
   guides: true,
   size: 1000,
   color: "hsl(6.13, 73.23%, 49.8%)",
-  stroke: 0
+  stroke: 0,
 };
 
 const Background = ({ svg, fill }) => (
@@ -45,7 +45,8 @@ function App() {
 
   const props3 = useSpring({
     svg: blob.children[0].children[0].attributes.d,
-    fill: blob.children[0].children[0].attributes.fill
+    fill: blob.children[0].children[0].attributes.fill,
+    config: {duration: 5000}
   });
 
   console.log(props3.svg);
@@ -54,7 +55,7 @@ function App() {
     //Change blob aspect every seconds
     setInterval(() => {
       change(blobs.editable(options))
-    }, 1000);
+    }, 5000);
   }, [])
 
   return (
